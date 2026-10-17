@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Shahriar Namvar's portfolio: electrocatalysis, battery testing, data engineering, and AI-driven analytics for energy research."
+    />
+    <meta property="og:title" content="Shahriar Namvar | Electrochemistry, Batteries and Data" />
+    <meta property="og:description" content="Ph.D. candidate at UIC working on electrocatalysts, batteries, and Python data and AI tools." />
+    <meta property="og:image" content="assets/shahriar-namvar.jpg" />
+    <meta name="theme-color" content="#060a14" />
+    <title>Shahriar Namvar | Electrochemistry, Batteries and Data</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Icon set: referenced below with <use href="#i-name"> -->
+    <svg class="icon-sprite" aria-hidden="true" focusable="false">
+      <symbol id="i-flask" viewBox="0 0 24 24"><path d="M10 2v7.5a2 2 0 0 1-.2.9L4.7 20.6a1 1 0 0 0 .9 1.4h12.8a1 1 0 0 0 .9-1.4l-5.1-10.2a2 2 0 0 1-.2-.9V2" /><path d="M8.5 2h7" /><path d="M7 16h10" /></symbol>
+      <symbol id="i-battery" viewBox="0 0 24 24"><path d="M15 7h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2" /><path d="M6 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1" /><path d="m11 7-3 5h4l-3 5" /><path d="M22 11v2" /></symbol>
+      <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M3 5v14a9 3 0 0 0 18 0V5" /><path d="M3 12a9 3 0 0 0 18 0" /></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M9.9 15.5a2 2 0 0 0-1.4-1.4l-6.1-1.6a.5.5 0 0 1 0-1l6.1-1.6a2 2 0 0 0 1.4-1.4l1.6-6.1a.5.5 0 0 1 1 0l1.6 6.1a2 2 0 0 0 1.4 1.4l6.1 1.6a.5.5 0 0 1 0 1l-6.1 1.6a2 2 0 0 0-1.4 1.4l-1.6 6.1a.5.5 0 0 1-1 0z" /><path d="M20 3v4" /><path d="M22 5h-4" /></symbol>
+      <symbol id="i-hexagon" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4a2 2 0 0 0 1-1.7z" /><circle cx="12" cy="12" r="3" /></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z" /><path d="m3 14 9 5 9-5" /><path d="m3 11 9 5 9-5" /></symbol>
+      <symbol id="i-microscope" viewBox="0 0 24 24"><path d="M6 18h8" /><path d="M3 22h18" /><path d="M14 22a7 7 0 1 0 0-14h-1" /><path d="M9 14h2" /><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z" /><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3" /></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18" /><path d="m19 9-5 5-4-4-3 3" /></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6" /><path d="m8 6-6 6 6 6" /></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 6h16v12H4z" /><path d="m4 7 8 6 8-6" /></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.1-1.3-.3-2.5-1-3.5.3-1.2.3-2.4 0-3.5 0 0-1 0-3 1.5a10.6 10.6 0 0 0-8 0C6 2 5 2 5 2c-.3 1.1-.3 2.3 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.4.5-.7 1-.8 1.6-.2.6-.3 1.3-.2 1.9v4" /><path d="M9 18c-4.5 2-5-2-7-2" /></symbol>
+      <symbol id="i-scholar" viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z" /><path d="M6 10v5c0 2 3 4 6 4s6-2 6-4v-5" /></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" /><path d="M2 9h4v12H2z" /><path d="M4 4h.01" /></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><path d="m7 10 5 5 5-5" /><path d="M12 15V3" /></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" /></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /></symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10v6" /><path d="M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" /></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" /></symbol>
+    </svg>
+
+    <div class="site-shell">
+      <header class="site-header" data-header>
+        <a class="brand" href="#home" aria-label="Shahriar Namvar home">
+          <span class="brand-mark">SN</span>
+          <span class="brand-name">Shahriar Namvar</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
+          <svg aria-hidden="true"><use href="#i-menu" /></svg>
+        </button>
+
+        <nav class="main-nav" aria-label="Primary navigation" data-nav>
+          <a class="active" href="#home">Home</a>
+          <a href="#research">Research</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#publications">Publications</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a class="header-cta" href="mailto:snamva2@uic.edu">
+          <span>Get in Touch</span>
+          <svg aria-hidden="true"><use href="#i-external" /></svg>
+        </a>
+      </header>
+
+      <main>
+        <!-- Hero ------------------------------------------------------------>
+        <section class="hero" id="home">
+          <canvas class="hero-canvas" data-network aria-hidden="true"></canvas>
+          <div class="hero-grid" aria-hidden="true"></div>
+          <div class="hero-content">
+            <div class="hero-avatar">
+              <img src="assets/shahriar-namvar.jpg" width="640" height="640" alt="Portrait of Shahriar Namvar" />
+            </div>
+            <p class="eyebrow">Electrochemistry / Batteries / Data &amp; AI</p>
+            <h1>Electrochemistry, batteries, and AI-driven analytics</h1>
+            <p class="breadcrumb"><a href="#home">Home</a> / Shahriar Namvar / Ph.D. Candidate, UIC</p>
+            <p class="hero-copy">
+              I design catalysts and test batteries at the University of Illinois Chicago, and I
+              build Python dashboards, ETL pipelines, and LLM workflows that turn experimental and
+              industrial data into decisions.
+            </p>
+            <div class="hero-actions">
+              <a class="primary-button" href="assets/Shahriar-Namvar-CV.pdf" download>
+                <svg aria-hidden="true"><use href="#i-download" /></svg>
+                Download CV
+              </a>
+              <a class="secondary-button" href="https://github.com/ShariarN96" target="_blank" rel="noreferrer">
+                <svg aria-hidden="true"><use href="#i-github" /></svg>
+                GitHub
+              </a>
+              <a class="secondary-button" href="https://scholar.google.com/citations?user=9rL6jlcAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">
+                <svg aria-hidden="true"><use href="#i-scholar" /></svg>
+                Scholar
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Highlights -------------------------------------------------------->
+        <section class="metrics four-up" aria-label="Areas of expertise">
+          <article>
+            <div class="metric-icon" aria-hidden="true"><svg><use href="#i-flask" /></svg></div>
+            <strong>Electrocatalysis</strong>
+            <p>MOF and graphene-foam catalysts for converting nitrate into ammonia.</p>
+          </article>
+          <article>
+            <div class="metric-icon" aria-hidden="true"><svg><use href="#i-battery" /></svg></div>
+            <strong>Battery Testing</strong>
+            <p>Zinc–nitrate and lithium-based cells, galvanostatic cycling, and degradation analysis.</p>
+          </article>
+          <article>
+            <div class="metric-icon" aria-hidden="true"><svg><use href="#i-database" /></svg></div>
+            <strong>Data Engineering</strong>
+            <p>ETL pipelines, PostgreSQL, Snowflake, Databricks, and Azure data workflows.</p>
+          </article>
+          <article>
+            <div class="metric-icon" aria-hidden="true"><svg><use href="#i-sparkles" /></svg></div>
+            <strong>AI &amp; Analytics</strong>
+            <p>LLM pipelines with LangChain and OpenAI, Dash dashboards, and machine learning.</p>
+          </article>
+        </section>
+
+        <!-- Research ------------------------------------------------------------>
+        <section class="section research-section" id="research">
+          <div class="section-kicker">Research Focus</div>
+          <div class="split-heading">
+            <h2>From catalyst design to cell-level battery performance.</h2>
+            <p>
+              My Ph.D. work connects materials synthesis, electrochemical testing, and
+              characterization to make ammonia from nitrate pollution and to understand how
+              energy storage materials perform and fail.
+            </p>
+          </div>
+          <div class="focus-grid quad-grid">
+            <article class="focus-card">
+              <div class="focus-icon" aria-hidden="true"><svg><use href="#i-hexagon" /></svg></div>
+              <h3>MOF catalysts for ammonia</h3>
+              <p>Single-metal and multivariate MOFs reaching ~1 A cm<sup>−2</sup> and 90% Faradaic efficiency for nitrate electroreduction.</p>
+            </article>
+            <article class="focus-card">
+              <div class="focus-icon" aria-hidden="true"><svg><use href="#i-layers" /></svg></div>
+              <h3>3D graphene foam electrodes</h3>
+              <p>CVD-grown graphene foam/MOF electrodes delivering 1500 mA cm<sup>−2</sup> at neutral pH.</p>
+            </article>
+            <article class="focus-card">
+              <div class="focus-icon" aria-hidden="true"><svg><use href="#i-battery" /></svg></div>
+              <h3>Zinc–nitrate and lithium cells</h3>
+              <p>Cycling over 50+ charge–discharge cycles on Biologic and Gamry potentiostats to track stability and degradation.</p>
+            </article>
+            <article class="focus-card">
+              <div class="focus-icon" aria-hidden="true"><svg><use href="#i-microscope" /></svg></div>
+              <h3>Characterization and failure analysis</h3>
+              <p>XPS, SEM/EDS, Raman, XRD, and NMR to find what limits performance in energy materials.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Featured work -------------------------------------------------------->
+        <section class="section resources-section" id="projects">
+          <div class="section-kicker">Featured Work</div>
+          <div class="section-heading">
+            <h2>Projects and research highlights</h2>
+            <p>Data and AI tools I've built, alongside selected papers on catalysts and batteries.</p>
+          </div>
+
+          <div class="resource-grid">
+            <article class="resource-card">
+              <a class="card-link" href="https://github.com/ShariarN96/RAG" target="_blank" rel="noreferrer" aria-label="Open the MOF catalyst discovery platform on GitHub"></a>
+              <div class="card-media media-pipeline" aria-hidden="true">
+                <span class="doc d1"></span>
+                <span class="doc d2"></span>
+                <span class="doc d3"></span>
+                <span class="flow"></span>
+                <span class="node n1"></span>
+                <span class="node n2"></span>
+                <span class="node n3"></span>
+              </div>
+              <div class="card-body">
+                <div class="card-meta">
+                  <span>GitHub</span>
+                  <span>In Progress</span>
+                </div>
+                <h3>AI platform for MOF catalyst discovery</h3>
+                <p>LLM literature mining with Wiley TDM, Docling, and OpenAI to extract catalyst performance data into a Dash dashboard.</p>
+              </div>
+            </article>
+
+            <article class="resource-card">
+              <a class="card-link" href="https://github.com/ShariarN96/Generator-temperature-monitoring-dashboard" target="_blank" rel="noreferrer" aria-label="Open the generator temperature dashboard on GitHub"></a>
+              <div class="card-media media-dashboard" aria-hidden="true">
+                <span class="axis x"></span>
+                <span class="axis y"></span>
+                <span class="bar b1"></span>
+                <span class="bar b2"></span>
+                <span class="bar b3"></span>
+                <span class="bar b4"></span>
+                <span class="curve"></span>
+              </div>
+              <div class="card-body">
+                <div class="card-meta">
+                  <span>GitHub</span>
+                  <span>Dash / ML</span>
+                </div>
+                <h3>Generator temperature prediction dashboard</h3>
+                <p>Machine-health monitoring with Dash, Plotly, Pandas, and a Scikit-learn model that predicts temperature trends.</p>
+              </div>
+            </article>
+
+            <article class="resource-card">
+              <a class="card-link" href="#experience" data-open-tab="tab-dt" aria-label="Jump to the LyondellBasell digital transformation internship"></a>
+              <div class="card-media media-llm" aria-hidden="true">
+                <span class="bubble b1"></span>
+                <span class="bubble b2"></span>
+                <span class="tag t1"></span>
+                <span class="tag t2"></span>
+                <span class="tag t3"></span>
+              </div>
+              <div class="card-body">
+                <div class="card-meta">
+                  <span>LyondellBasell</span>
+                  <span>LangChain</span>
+                </div>
+                <h3>LLM text analytics pipeline</h3>
+                <p>Automated classification and extraction from news and web content, cutting manual review by ~90%.</p>
+              </div>
+            </article>
+
+            <article class="resource-card">
+              <a class="card-link" href="https://doi.org/10.1002/aenm.202405031" target="_blank" rel="noreferrer" aria-label="Open the 2D multivariate MOF ammonia paper"></a>
+              <div class="card-media media-mof" aria-hidden="true">
+                <span class="lattice"></span>
+                <span class="site s1"></span>
+                <span class="site s2"></span>
+              </div>
+              <div class="card-body">
+                <div class="card-meta">
+                  <span>Adv. Energy Mater.</span>
+                  <span>Ammonia</span>
+                </div>
+                <h3>2D multivariate MOFs for ammonia from nitrate</h3>
+                <p>High-yield ammonia synthesis through nitrate electroreduction on layered multivariate frameworks.</p>
+              </div>
+            </article>
+
+            <article class="resource-card">
+              <a class="card-link" href="https://doi.org/10.1021/acsami.6c00231" target="_blank" rel="noreferrer" aria-label="Open the zinc-nitrate battery paper"></a>
+              <div class="card-media media-battery" aria-hidden="true">
+                <span class="cell c1"></span>
+                <span class="cell c2"></span>
+                <span class="cell c3"></span>
+                <span class="coating"></span>
+              </div>
+              <div class="card-body">
+                <div class="card-meta">
+                  <span>ACS AMI</span>
+                  <span>Zn–Nitrate</span>
+                </div>
+                <h3>Co–N<sub>4</sub> conjugated layers for zinc–nitrate batteries</h3>
+                <p>Conductive π–d frameworks with cobalt active sites for nitrate electrocatalysis and energy storage.</p>
+              </div>
+            </article>
+
+            <article class="resource-card">
+              <a class="card-link" href="https://doi.org/10.1038/s41467-026-69751-z" target="_blank" rel="noreferrer" aria-label="Open the Li-CO2 battery paper"></a>
+              <div class="card-media media-co2" aria-hidden="true">
+                <span class="bond"></span>
+                <span class="atom o1"></span>
+                <span class="atom c"></span>
+                <span class="atom o2"></span>
+                <span class="ring"></span>
+              </div>
+              <div class="card-body">
+                <div class="card-meta">
+                  <span>Nature Comms</span>
+                  <span>Li–CO<sub>2</sub></span>
+                </div>
+                <h3>Reaction kinetics in Li–CO<sub>2</sub> batteries</h3>
+                <p>Pathways toward sustainable reaction kinetics in lithium–carbon dioxide battery chemistry.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Experience (tabs) ------------------------------------------------->
+        <section class="section industry-section" id="experience">
+          <div class="section-kicker">Experience</div>
+          <div class="split-heading">
+            <h2>Lab research and industry data work, side by side.</h2>
+            <p>
+              Four years of electrochemistry research at UIC and two internships at
+              LyondellBasell building analytics, ETL, and AI tools for industrial teams.
+            </p>
+          </div>
+
+          <div class="tabs" data-tabs>
+            <div class="tab-list" role="tablist" aria-label="Positions">
+              <button class="tab" type="button" role="tab" id="tab-dt" aria-controls="panel-dt" aria-selected="true">
+                <svg aria-hidden="true"><use href="#i-briefcase" /></svg>
+                <span><strong>Digital Transformation Intern</strong><small>LyondellBasell, 2025</small></span>
+              </button>
+              <button class="tab" type="button" role="tab" id="tab-da" aria-controls="panel-da" aria-selected="false" tabindex="-1">
+                <svg aria-hidden="true"><use href="#i-chart" /></svg>
+                <span><strong>Data Analyst Intern</strong><small>LyondellBasell, 2024–25</small></span>
+              </button>
+              <button class="tab" type="button" role="tab" id="tab-uic" aria-controls="panel-uic" aria-selected="false" tabindex="-1">
+                <svg aria-hidden="true"><use href="#i-flask" /></svg>
+                <span><strong>Graduate Research Assistant</strong><small>UIC, 2021–present</small></span>
+              </button>
+            </div>
+
+            <div class="industry-grid">
+              <div class="tab-panels">
+                <article class="industry-panel featured-industry" role="tabpanel" id="panel-dt" aria-labelledby="tab-dt">
+                  <div class="industry-label">LyondellBasell Industries / Houston, TX / May–Dec 2025</div>
+                  <h3>Business intelligence platform and LLM text analytics</h3>
+                  <p>
+                    Built a Python platform that scrapes, validates, and visualizes business data, and an
+                    LLM pipeline that classifies web content automatically.
+                  </p>
+                  <div class="industry-stats">
+                    <span><strong>~90%</strong> less manual content review</span>
+                    <span><strong>LLM</strong> LangChain and OpenAI classification</span>
+                    <span><strong>ETL</strong> Pydantic-validated data pipeline</span>
+                  </div>
+                  <ul class="check-list">
+                    <li><svg aria-hidden="true"><use href="#i-check" /></svg><span>Combined ETL pipelines, automated web scraping, and interactive Dash visualizations translated from Figma wireframes.</span></li>
+                    <li><svg aria-hidden="true"><use href="#i-check" /></svg><span>Validated uploaded Excel and CSV files with Pydantic models and exported structured JSON for analysis.</span></li>
+                    <li><svg aria-hidden="true"><use href="#i-check" /></svg><span>Automated article classification and information extraction, backed by PostgreSQL with Alembic migrations.</span></li>
+                    <li><svg aria-hidden="true"><use href="#i-check" /></svg><span>Covered data transformations and interactive components with pytest unit tests.</span></li>
+                  </ul>
+                  <div class="tag-row">
+                    <span>Python</span><span>Dash</span><span>LangChain</span><span>OpenAI</span><span>PostgreSQL</span><span>Pydantic</span><span>pytest</span>
+                  </div>
+                </article>
+
+                <article class="industry-panel featured-industry" role="tabpanel" id="panel-da" aria-labelledby="tab-da" hidden>
+                  <div class="industry-label">LyondellBasell Industries / Houston, TX / Jun 2024–Jan 2025</div>
+                  <h3>Predictive maintenance for industrial equipment</h3>
+                  <p>
+                    Built dashboards and data tools that bring sensor data from rotating equipment
+                    into Azure machine learning pipelines and surface likely failures early.
+                  </p>
+                  <div class="industry-stats">
+                    <span><strong>95%</strong> faster data processing</span>
+                    <span><strong>500+</strong> equipment sources integrated</span>
+                    <span><strong>2–6 mo</strong> early failure warning</span>
+                  </div>
+                  <ul class="check-list">
+                    <li><svg aria-hidden="true"><use href="#i-check" /></svg><span>Built a Dash and Plotly dashboard where users tune model parameters and view machine learning predictions.</span></li>
+                    <li><svg aria-hidden="true"><use href="#i-check" /></svg><span>Wrote the front and back end of a web app converting data from 500+ equipment sources into JSON.</span></li>
+                    <li><svg aria-hidden="true"><use href="#i-check" /></svg><span>Screened time series from 100+ temperature sensors to pick high-quality training and test sets.</span></li>
+                    <li><svg aria-hidden="true"><use href="#i-check" /></svg><span>Mapped 500+ rotating-equipment tags across SAP, Aspen Plus, and P&amp;ID documents.</span></li>
+                  </ul>
+                  <div class="tag-row">
+                    <span>Python</span><span>Dash</span><span>Plotly</span><span>Scikit-learn</span><span>Azure ML</span><span>Git</span>
+                  </div>
+                </article>
+
+                <article class="industry-panel featured-industry" role="tabpanel" id="panel-uic" aria-labelledby="tab-uic" hidden>
+                  <div class="industry-label">University of Illinois Chicago / Chicago, IL / Jun 2021–Present</div>
+                  <h3>Electrocatalysts and batteries for nitrate-to-ammonia conversion</h3>
+                  <p>
+                    Graduate research and teaching assistant designing catalysts, building cells, and
+                    diagnosing failure in energy conversion and storage materials.
+                  </p>
+                  <div class="industry-stats">
+                    <span><strong>~1 A cm<sup>−2</sup></strong> current density</span>
+                    <span><strong>90%</strong> Faradaic efficiency</span>
+                    <span><strong>11</strong> peer-reviewed papers</span>
+                  </div>
+                  <ul class="check-list">
+                    <li><svg aria-hidden="true"><use href="#i-check" /></svg><span>Designed MOF catalysts with ammonia yield rates of ~68 mg h<sup>−1</sup> cm<sup>−2</sup> in alkaline media.</span></li>
+                    <li><svg aria-hidden="true"><use href="#i-check" /></svg><span>Grew 3D graphene foam/MOF electrodes by CVD, reaching 1500 mA cm<sup>−2</sup> at neutral pH.</span></li>
+                    <li><svg aria-hidden="true"><use href="#i-check" /></svg><span>Developed test protocols for lithium-based and zinc–nitrate cells on Biologic and Gamry potentiostats.</span></li>
+                    <li><svg aria-hidden="true"><use href="#i-check" /></svg><span>Built an AI literature-mining platform with Wiley TDM, CrossRef, Azure Blob Storage, and OpenAI.</span></li>
+                  </ul>
+                  <div class="tag-row">
+                    <span>Biologic</span><span>Gamry</span><span>CVD</span><span>XPS</span><span>SEM/EDS</span><span>Raman</span><span>XRD</span><span>NMR</span>
+                  </div>
+                </article>
+              </div>
+
+              <div class="experience-list" aria-label="Education">
+                <article>
+                  <div class="list-head">
+                    <svg aria-hidden="true"><use href="#i-cap" /></svg>
+                    <span>Ph.D. / 2021–2027 (expected)</span>
+                  </div>
+                  <h3>Chemical Engineering</h3>
+                  <p>University of Illinois Chicago</p>
+                </article>
+                <article>
+                  <div class="list-head">
+                    <svg aria-hidden="true"><use href="#i-cap" /></svg>
+                    <span>M.S. / 2021–2024</span>
+                  </div>
+                  <h3>Mechanical Engineering</h3>
+                  <p>University of Illinois Chicago</p>
+                </article>
+                <article>
+                  <div class="list-head">
+                    <svg aria-hidden="true"><use href="#i-cap" /></svg>
+                    <span>B.S. / 2014–2019</span>
+                  </div>
+                  <h3>Chemical Engineering</h3>
+                  <p>Amirkabir University of Technology, Tehran</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Publications ------------------------------------------------------->
+        <section class="section publication-section" id="publications">
+          <div class="section-kicker">Publication Index</div>
+          <div class="section-heading">
+            <h2>Selected publications</h2>
+            <p>7 of 11 peer-reviewed papers on electrocatalysis, batteries, and energy materials.</p>
+          </div>
+
+          <div class="publication-list">
+            <a class="publication-row" href="https://doi.org/10.1021/acsami.6c00231" target="_blank" rel="noreferrer">
+              <span class="pub-year">2026</span>
+              <span class="pub-title">Intrinsically conductive π–d conjugated layers with Co–N<sub>4</sub> active sites for efficient nitrate electrocatalysis and zinc–nitrate batteries</span>
+              <span class="pub-journal">ACS Appl. Mater. Interfaces</span>
+              <svg aria-hidden="true"><use href="#i-external" /></svg>
+            </a>
+            <a class="publication-row" href="https://doi.org/10.1038/s41467-026-69751-z" target="_blank" rel="noreferrer">
+              <span class="pub-year">2026</span>
+              <span class="pub-title">Pathways for sustainable reaction kinetics in Li–CO<sub>2</sub> batteries</span>
+              <span class="pub-journal">Nature Communications</span>
+              <svg aria-hidden="true"><use href="#i-external" /></svg>
+            </a>
+            <a class="publication-row" href="https://doi.org/10.1002/aenm.202405031" target="_blank" rel="noreferrer">
+              <span class="pub-year">2025</span>
+              <span class="pub-title">2D multivariate metal–organic frameworks for high-yield ammonia synthesis from nitrate</span>
+              <span class="pub-journal">Adv. Energy Materials</span>
+              <svg aria-hidden="true"><use href="#i-external" /></svg>
+            </a>
+            <a class="publication-row" href="https://doi.org/10.1126/science.adr5604" target="_blank" rel="noreferrer">
+              <span class="pub-year">2025</span>
+              <span class="pub-title">Resiliency, morphology, and entropic transformations in high-entropy oxide nanoribbons</span>
+              <span class="pub-journal">Science</span>
+              <svg aria-hidden="true"><use href="#i-external" /></svg>
+            </a>
+            <a class="publication-row" href="https://doi.org/10.1002/adma.202309302" target="_blank" rel="noreferrer">
+              <span class="pub-year">2024</span>
+              <span class="pub-title">Vapor-phase synthesis of electrocatalytic covalent organic frameworks</span>
+              <span class="pub-journal">Advanced Materials</span>
+              <svg aria-hidden="true"><use href="#i-external" /></svg>
+            </a>
+            <a class="publication-row" href="https://doi.org/10.1021/acsnano.3c04178" target="_blank" rel="noreferrer">
+              <span class="pub-year">2024</span>
+              <span class="pub-title">Thermodynamics and kinetics in anisotropic growth of one-dimensional mid-entropy nanoribbons</span>
+              <span class="pub-journal">ACS Nano</span>
+              <svg aria-hidden="true"><use href="#i-external" /></svg>
+            </a>
+            <a class="publication-row" href="https://doi.org/10.1002/aenm.202303467" target="_blank" rel="noreferrer">
+              <span class="pub-year">2024</span>
+              <span class="pub-title">Fast charge-transfer rates in Li–CO<sub>2</sub> batteries with a coupled cation–electron transfer process</span>
+              <span class="pub-journal">Adv. Energy Materials</span>
+              <svg aria-hidden="true"><use href="#i-external" /></svg>
+            </a>
+          </div>
+
+          <a class="inline-link scholar-link" href="https://scholar.google.com/citations?user=9rL6jlcAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">
+            <svg aria-hidden="true"><use href="#i-book" /></svg>
+            See all 11 papers on Google Scholar
+          </a>
+        </section>
+
+        <!-- Skills -------------------------------------------------------------->
+        <section class="section skills-section" id="skills">
+          <div class="section-kicker">Toolkit</div>
+          <div class="section-heading">
+            <h2>Skills across the lab and the stack</h2>
+            <p>Instruments and techniques from the bench, and the software I use to analyze and ship.</p>
+          </div>
+
+          <div class="skill-grid">
+            <article class="skill-card">
+              <div class="focus-icon" aria-hidden="true"><svg><use href="#i-battery" /></svg></div>
+              <h3>Electrochemistry &amp; Batteries</h3>
+              <div class="tag-row">
+                <span>Cyclic voltammetry</span><span>Galvanostatic cycling</span><span>Chronoamperometry</span><span>Chronopotentiometry</span><span>Biologic</span><span>Gamry</span><span>Degradation analysis</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="focus-icon" aria-hidden="true"><svg><use href="#i-microscope" /></svg></div>
+              <h3>Materials Characterization</h3>
+              <div class="tag-row">
+                <span>XPS</span><span>SEM/EDS</span><span>XRD</span><span>NMR</span><span>Raman</span><span>UV-Vis</span><span>DLS</span><span>TGA</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="focus-icon" aria-hidden="true"><svg><use href="#i-code" /></svg></div>
+              <h3>Programming</h3>
+              <div class="tag-row">
+                <span>Python</span><span>SQL</span><span>MATLAB</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>pytest</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="focus-icon" aria-hidden="true"><svg><use href="#i-chart" /></svg></div>
+              <h3>Dashboards &amp; BI</h3>
+              <div class="tag-row">
+                <span>Dash</span><span>Plotly</span><span>Power BI</span><span>Power Query</span><span>DAX</span><span>Tableau</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="focus-icon" aria-hidden="true"><svg><use href="#i-sparkles" /></svg></div>
+              <h3>AI &amp; Machine Learning</h3>
+              <div class="tag-row">
+                <span>OpenAI APIs</span><span>LangChain</span><span>Scikit-learn</span><span>Docling</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <div class="focus-icon" aria-hidden="true"><svg><use href="#i-database" /></svg></div>
+              <h3>Data &amp; Cloud</h3>
+              <div class="tag-row">
+                <span>PostgreSQL</span><span>Snowflake</span><span>Databricks</span><span>dbt</span><span>Azure Data Factory</span><span>Azure</span><span>Docker</span><span>Git</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Contact ------------------------------------------------------------>
+        <section class="cta-section" id="contact">
+          <div>
+            <p class="section-kicker">Let's Connect</p>
+            <h2>Open to roles and collaborations in battery R&amp;D, electrochemistry, and energy data science.</h2>
+            <p class="cta-location">
+              <svg aria-hidden="true"><use href="#i-pin" /></svg>
+              Chicago, IL
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a class="primary-button" href="mailto:snamva2@uic.edu">
+              <svg aria-hidden="true"><use href="#i-mail" /></svg>
+              Email
+            </a>
+            <a class="secondary-button" href="https://github.com/ShariarN96" target="_blank" rel="noreferrer">
+              <svg aria-hidden="true"><use href="#i-github" /></svg>
+              GitHub
+            </a>
+            <a class="secondary-button" href="https://scholar.google.com/citations?user=9rL6jlcAAAAJ&amp;hl=en" target="_blank" rel="noreferrer">
+              <svg aria-hidden="true"><use href="#i-scholar" /></svg>
+              Scholar
+            </a>
+            <a class="secondary-button" href="https://www.linkedin.com/in/shanenn/" target="_blank" rel="noreferrer">
+              <svg aria-hidden="true"><use href="#i-linkedin" /></svg>
+              LinkedIn
+            </a>
+            <a class="secondary-button" href="assets/Shahriar-Namvar-CV.pdf" download>
+              <svg aria-hidden="true"><use href="#i-download" /></svg>
+              CV
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>&copy; <span data-year>2026</span> Shahriar Namvar. Built for GitHub Pages.</p>
+        <a href="#home">Back to top</a>
+      </footer>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
