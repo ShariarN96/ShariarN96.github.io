@@ -417,6 +417,31 @@ sub {
   font-size: 1.02rem;
 }
 
+/* Impact numbers: big result, short label, one line of context */
+.impact strong.impact-value {
+  margin-bottom: 4px;
+  background: linear-gradient(90deg, var(--blue), var(--green));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 2.35rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.impact .impact-label {
+  display: block;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.impact p {
+  font-size: 0.92rem;
+}
+
 .metrics p,
 .focus-card p,
 .resource-card p,
@@ -510,6 +535,10 @@ sub {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+}
+
+.resource-grid.four-up {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .resource-card {
@@ -798,6 +827,49 @@ sub {
   transform: translate(-50%, -50%);
 }
 
+/* Scheduled pipeline (DAG) feeding a newsletter */
+.media-dag {
+  background:
+    linear-gradient(135deg, rgba(var(--green-rgb), 0.18), transparent 50%),
+    linear-gradient(45deg, #0f1a2c, #13192e 55%, #1d1a2a);
+}
+
+.media-dag .task {
+  width: 15%;
+  height: 16%;
+  border: 2px solid var(--blue);
+  border-radius: 7px;
+  background: rgba(var(--blue-rgb), 0.2);
+}
+
+.media-dag .k1 { top: 22%; left: 8%; }
+.media-dag .k2 { top: 22%; left: 33%; border-color: var(--green); background: rgba(var(--green-rgb), 0.18); }
+.media-dag .k3 { top: 58%; left: 33%; border-color: var(--green); background: rgba(var(--green-rgb), 0.18); }
+.media-dag .k4 { top: 40%; left: 57%; border-color: var(--orange); background: rgba(var(--orange-rgb), 0.18); }
+
+.media-dag .edge {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.55);
+  transform-origin: left center;
+}
+
+.media-dag .e1 { top: 30%; left: 23%; width: 10%; }
+.media-dag .e2 { top: 31%; left: 23%; width: 14%; transform: rotate(52deg); }
+.media-dag .e3 { top: 48%; left: 48%; width: 9%; }
+
+.media-dag .letter {
+  top: 26%;
+  right: 8%;
+  width: 18%;
+  height: 48%;
+  border-radius: 4px;
+  background:
+    linear-gradient(var(--orange), var(--orange)) 50% 18% / 70% 8% no-repeat,
+    repeating-linear-gradient(180deg, transparent 0 8px, rgba(20, 30, 50, 0.35) 8px 10px) 50% 75% / 70% 50% no-repeat,
+    linear-gradient(180deg, #eef3fa, #b9c6d8);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.3);
+}
+
 .card-body {
   padding: 14px 18px 22px;
 }
@@ -823,6 +895,12 @@ sub {
 .card-meta span:first-child {
   border-color: rgba(var(--green-rgb), 0.45);
   color: var(--green);
+}
+
+/* Blue tag for the "Data & AI" side in What I Bring */
+.card-meta span.tag-data {
+  border-color: rgba(var(--blue-rgb), 0.5);
+  color: #8fb4ff;
 }
 
 .resource-card h3 {
@@ -1239,6 +1317,7 @@ sub {
   }
 
   .resource-grid,
+  .resource-grid.four-up,
   .skill-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1401,6 +1480,7 @@ sub {
   }
 
   .resource-grid,
+  .resource-grid.four-up,
   .skill-grid {
     grid-template-columns: 1fr;
   }
